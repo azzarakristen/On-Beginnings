@@ -1,0 +1,97 @@
+html {
+  background-color: #d3dff2;
+  margin: 5px;
+  animation: changeBackgroundColor 20s infinite alternate; 
+}
+
+#square {
+  width: 10vw;
+  height: 10vw;
+  background-color: #aac7e6;
+  border-radius: 2px;
+  animation: changeSquareColor 20s infinite alternate; 
+
+}
+.grid{
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
+  display: grid;
+  grid-gap: 1vw;
+  position: fixed;
+  }
+
+#title {
+  color: white;
+  font-size: 100px;
+  font-family: "orpheuspro", serif;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 2px;
+  animation: spin 15s linear infinite;
+}
+
+.container {
+  position: relative;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes changeBackgroundColor {
+  0% { background-color:#bdd6f0; }
+  25% { background-color:#db97cb; }
+  50% { background-color:#db9872; }
+  75% { background-color: #9cbaa0; }
+  100% { background-color: #bdd6f0; }
+}
+
+@keyframes changeSquareColor {
+  0% { background-color: #aac7e6; }
+  25% { background-color:#cc83ba; }
+  50% { background-color:#cf855b; }
+  75% { background-color: #77917a; }
+  100% { background-color: #aac7e6; }
+}
+
+
+.body {
+  font-family: "fields", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  z-index: 1;
+  position: relative;
+  color: white;
+  font-size: 30px;
+  max-width: 65vw;
+  padding-left: 50px;
+  padding-top: 20px;
+
+}
+
+.initial_navigation, .navigation2 {
+  font-size: 36px;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  font-family: "orpheuspro", serif;
+  font-weight: 400;
+  font-style: italic;
+  left: 640px;
+
+}
+
+#begin, #end {
+  border: 2px solid black;
+  border-radius: 15px;
+  display: inline-block;
+  background-color: white;
+  padding: 10px;
+}
+
+#beginning, #ending, #continue {
+  background-color: white;
+  display: inline-block;
+}
