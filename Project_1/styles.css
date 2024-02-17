@@ -4,6 +4,12 @@ html {
   animation: changeBackgroundColor 20s infinite alternate; 
 }
 
+/* 
+This technically does work and I don't want to bog you down with more loops so I don't mind this.
+I would recommend making your grid a display: flex and then making your squares size a percentage value.
+Then apply flex-wrap:wrap to your grid class  so they all wrap nicely to the next line.
+ */
+
 #square {
   width: 10vw;
   height: 10vw;
@@ -15,8 +21,16 @@ html {
 .grid{
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
   display: grid;
-  grid-gap: 1vw;
+  grid-gap: 5px;
   position: fixed;
+  z-index: -1;
+  }
+
+  /* Made this class centered because your spinning title was causing overflow*/
+  .circle{
+    display: inline-block;
+    position: absolute;
+    left: 50%;
   }
 
 #title {
@@ -29,10 +43,15 @@ html {
   animation: spin 15s linear infinite;
 }
 
-.container {
+/* 
+  Added this class as a wrapper for the title so we could better manage the styles from the parent
+   down to the child. Try to do this with your other two sections (the main text with nav and the end
+   nav) to style them more efficiently. 
+*/
+.title-container {
   position: relative;
-  padding-top: 20px;
-  padding-bottom: 10px;
+  padding: 15px;
+  height: 100vh;
 }
 
 @keyframes spin {
@@ -73,13 +92,10 @@ html {
 
 .initial_navigation, .navigation2 {
   font-size: 36px;
-  position: relative;
   z-index: 2;
-  cursor: pointer;
   font-family: "orpheuspro", serif;
   font-weight: 400;
   font-style: italic;
-  left: 640px;
 
 }
 
@@ -89,9 +105,13 @@ html {
   display: inline-block;
   background-color: white;
   padding: 10px;
+  cursor: pointer;
+
 }
 
 #beginning, #ending, #continue {
   background-color: white;
   display: inline-block;
+  cursor: pointer;
+
 }
