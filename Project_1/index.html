@@ -1,83 +1,90 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>tiles</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="https://use.typekit.net/rgv7sob.css" />
-  </head>
-  <body>
-    <div class="grid">
-      <div id="square"></div>
-      <div id="square"></div>
-      <div id="square"></div>
-      <div id="square"></div>
-      <div id="square"></div>
-      <div id="square"></div>
-      <div id="square"></div>
-      <div id="square"></div>
-      <div id="square"></div>
-      <div id="square"></div>
-      <div id="square"></div>
-      <div id="square"></div>
-      <div id="square"></div>
-      <div id="square"></div>
-      <div id="square"></div>
-      <div id="square"></div>
-      <div id="square"></div>
-      <div id="square"></div>
-      <div id="square"></div>
-      <div id="square"></div>
-      <div id="square"></div>
-      <div id="square"></div>
-      <div id="square"></div>
-      <div id="square"></div>
-      <div id="square"></div>
-      <div id="square"></div>
-      <div id="square"></div>
-      <div id="square"></div>
-      <div id="square"></div>
-      <div id="square"></div>
-      <div id="square"></div>
-      <div id="square"></div>
-      <div id="square"></div>
-      <div id="square"></div>
-      <div id="square"></div>
-      <div id="square"></div>
-      <div id="square"></div>
-      <div id="square"></div>
-      <div id="square"></div>
-      <div id="square"></div>
-      <div id="square"></div>
-      <div id="square"></div>
-      <div id="square"></div>
-      <div id="square"></div>
-      <div id="square"></div>
-    </div>
+    <head>
+        <meta charset="UTF-8" />
+        <title>tiles</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://use.typekit.net/rgv7sob.css">
+    </head>
+    <body>
+        <div class="grid">
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+            <div id="square"></div>
+        </div>
+        
+        <div class="title-container">
+         <p id="title">On Beginnings &#8226; Mary Ruefle &#8226;</p>
+        </div>
 
-    <div class="title-container">
-      <div class="circle">
-        <p id="title">On Beginnings &#8226; Mary Ruefle &#8226;</p>
-      </div>
-    </div>
+        <div id="paragraph" class="body"></div>
+        
+        <div class="navigation">
+         <p id="begin">begin</p>
+         <p id="end">complete</p>
+         <p id="restart">restart</p>
+        </div>
+        <div class="the-end" style="display: none;">
+            The End
+        </div>
+        
 
-    <script src="script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/circletype@2.3.0/dist/circletype.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script>
-      const text = document.getElementById("text");
-      const rotate = new CircleType(title).radius(200); // This is cool but consider just doing this with css
-    </script>
-    <div class="initial_navigation">
-      <p id="begin">begin</p>
-      <p id="end">end</p>
-    </div>
+        <script src="script.js"></script>
 
-    <div id="paragraph" class="body"></div>
-    <div class="navigation2">
-      <p id="beginning">to beginning</p>
-      <p class="continue">continue</p>
-      <p id="ending">to ending</p>
-    </div>
-  </body>
+        <script src="https://cdn.jsdelivr.net/npm/circletype@2.3.0/dist/circletype.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+        <script>
+            const text = document.getElementById("title");
+            const rotate = new CircleType(title).radius(200);
+        </script>
+        
+    </body>
 </html>

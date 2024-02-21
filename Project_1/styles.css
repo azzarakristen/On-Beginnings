@@ -1,62 +1,7 @@
 html {
-  background-color: #d3dff2;
-  margin: 5px;
+ 
+  margin: 0px;
   animation: changeBackgroundColor 20s infinite alternate; 
-}
-
-/* 
-This technically does work and I don't want to bog you down with more loops so I don't mind this.
-I would recommend making your grid a display: flex and then making your squares size a percentage value.
-Then apply flex-wrap:wrap to your grid class  so they all wrap nicely to the next line.
- */
-
-#square {
-  width: 10vw;
-  height: 10vw;
-  background-color: #aac7e6;
-  border-radius: 2px;
-  animation: changeSquareColor 20s infinite alternate; 
-
-}
-.grid{
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr ;
-  display: grid;
-  grid-gap: 5px;
-  position: fixed;
-  z-index: -1;
-  }
-
-  /* Made this class centered because your spinning title was causing overflow*/
-  .circle{
-    display: inline-block;
-    position: absolute;
-    left: 50%;
-  }
-
-#title {
-  color: white;
-  font-size: 100px;
-  font-family: "orpheuspro", serif;
-  font-weight: 400;
-  font-style: italic;
-  letter-spacing: 2px;
-  animation: spin 15s linear infinite;
-}
-
-/* 
-  Added this class as a wrapper for the title so we could better manage the styles from the parent
-   down to the child. Try to do this with your other two sections (the main text with nav and the end
-   nav) to style them more efficiently. 
-*/
-.title-container {
-  position: relative;
-  padding: 15px;
-  height: 100vh;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
 }
 
 @keyframes changeBackgroundColor {
@@ -67,6 +12,25 @@ Then apply flex-wrap:wrap to your grid class  so they all wrap nicely to the nex
   100% { background-color: #bdd6f0; }
 }
 
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  grid-gap: 7px;
+  justify-content: left;
+  align-items: left;
+  width: 105vw; 
+  height: 100vh; 
+  position: fixed;
+}
+
+#square {
+  width: 10vw;
+  height: 10vw;
+  background-color: #aac7e6;
+  border-radius: 4px;
+  animation: changeSquareColor 20s infinite alternate;
+}
+
 @keyframes changeSquareColor {
   0% { background-color: #aac7e6; }
   25% { background-color:#cc83ba; }
@@ -75,6 +39,51 @@ Then apply flex-wrap:wrap to your grid class  so they all wrap nicely to the nex
   100% { background-color: #aac7e6; }
 }
 
+#title {
+  color: black;
+  font-size: 100px;
+  font-family: "orpheuspro", serif;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 2px;
+  animation: spin 15s linear infinite;
+}
+
+.title-container {
+  position: relative;
+  display: flex;
+  justify-content: center; 
+  top: -120px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.navigation {
+  font-size: 36px;
+  z-index: 2;
+  font-family: "orpheuspro", serif;
+  font-weight: 400;
+  font-style: italic;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  top: -210px;
+}
+
+#begin, #end, #restart {
+  border: 2px solid black;
+  border-radius: 15px;
+  background-color: white;
+  padding: 10px;
+  cursor: pointer;
+  margin: 10px;
+
+}
 
 .body {
   font-family: "fields", sans-serif;
@@ -84,34 +93,81 @@ Then apply flex-wrap:wrap to your grid class  so they all wrap nicely to the nex
   position: relative;
   color: white;
   font-size: 30px;
-  max-width: 65vw;
-  padding-left: 50px;
-  padding-top: 20px;
-
+  top: -190px;
 }
 
-.initial_navigation, .navigation2 {
-  font-size: 36px;
-  z-index: 2;
+#paragraph > div:nth-child(2),
+#paragraph > div:nth-child(4) {
+    text-align: right;
+    padding-right: 50px;
+    max-width: 100%;
+    margin-left: 35vw;
+}
+
+#paragraph > div:nth-child(1),
+#paragraph > div:nth-child(3) {
+    text-align: left;
+    max-width: 65vw;
+    padding-left: 50px;
+    padding-top: 20px;
+}
+
+#paragraph {
+  margin: 50px;
+}
+
+.the-end {
   font-family: "orpheuspro", serif;
   font-weight: 400;
   font-style: italic;
-
+  position: relative;
+  font-size: 50px;
+  
+  
 }
 
-#begin, #end {
-  border: 2px solid black;
-  border-radius: 15px;
-  display: inline-block;
-  background-color: white;
-  padding: 10px;
-  cursor: pointer;
+@media screen and (max-width: 1300px) {
 
+  .grid {
+    width: 110%;
+  }
+  #square {
+    width: 25vw;
+    height: 25vw;
+  }
+  #paragraph {
+    margin: 15px;
+  }
+
+  .body {
+    font-size: 60px;
+  }
+  #paragraph > div:nth-child(2),
+  #paragraph > div:nth-child(4) {
+      text-align: right;
+      padding-right: 20px;
+      max-width: 100%;
+      margin-left: 15vw;
+  }
+
+  #paragraph > div:nth-child(1),
+  #paragraph > div:nth-child(3) {
+      text-align: left;
+      max-width: 85vw;
+      padding-left: 20px;
+      padding-top: 20px;
+  }
+  .navigation {
+    font-size: 60px;
+  }
+
+  #title {
+    font-size: 130px;
+  }
+
+  .title-container, .navigation, .body {
+    top: 150px;
+  }
 }
 
-#beginning, #ending, #continue {
-  background-color: white;
-  display: inline-block;
-  cursor: pointer;
 
-}
